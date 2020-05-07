@@ -72,7 +72,6 @@ public class AppErrorController  implements ErrorController {
         if (status != null) {
             return status;
         }
-
         return 500;
     }
 }

@@ -20,6 +20,7 @@ public class AuthorityInterceptor implements HandlerInterceptor {
 
     /**
      * 在请求处理之前进行调用（Controller方法调用之前）
+     * 黑名单拦截
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,

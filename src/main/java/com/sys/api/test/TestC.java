@@ -1,4 +1,5 @@
 package com.sys.api.test;
+import com.sys.api.modules.envapi.dao.VaddressMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,8 @@ import java.util.List;
 public class TestC {
     @Autowired
     private TestDao testDao;
-
+    @Autowired
+    private VaddressMapper vaddressMapper ;
 
     @GetMapping("/test")
     @ResponseBody
@@ -18,9 +20,10 @@ public class TestC {
         return testDao.getInfo();
     }
 
-    @GetMapping("/hello")
-    public String hello(){
-        return "html/hello";
+    @GetMapping("/cc")
+    @ResponseBody
+    public List hello(){
+        return vaddressMapper.selectAll();
     }
 
     @GetMapping("/login")
